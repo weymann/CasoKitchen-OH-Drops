@@ -12,28 +12,47 @@ There's no automatic discovery.
 
 ## Thing Configuration
 
-Please check https://publickitchenapi.casoapp.com/ to discover your
+You need a [Caso Account](https://www.casoapp.com/Account/Create) to get configuration parameters.
+After register you'll get the
 
 - API key
 - Device ID 
 
 ### `sample` Thing Configuration
 
-| Name            | Type    | Description                           | Default | Required | Advanced |
-|-----------------|---------|---------------------------------------|---------|----------|----------|
-| hostname        | text    | Hostname or IP address of the device  | N/A     | yes      | no       |
-| password        | text    | Password to access the device         | N/A     | yes      | no       |
-| refreshInterval | integer | Interval the device is polled in sec. | 600     | no       | yes      |
+| Name            | Type    | Description                                          | Default | 
+|-----------------|---------|------------------------------------------------------|---------|
+| apiKey          | text    | API obtained from thing configuration                | N/A     |
+| deviceId        | text    | Device Id obtained from thing configuration          | N/A     |
+| refreshInterval | integer | Interval the device is polled in minutes             | 5       |
 
 ## Channels
 
-_Here you should provide information about available channel types, what their meaning is and how they can be used._
+### Generic
 
-_Note that it is planned to generate some part of this based on the XML files within ```src/main/resources/OH-INF/thing``` of your binding._
+| Channel       | Type     | Read/Write | Description                  |
+|---------------|----------|------------|------------------------------|
+| light-control | Switch   | RW         | Control lights for all zones |
+| hint          | text     | R          | General command description  |
+| last-update   | DateTime | R          | Date and Time of last update |
 
-| Channel | Type   | Read/Write | Description                 |
-|---------|--------|------------|-----------------------------|
-| control | Switch | RW         | This is the control channel |
+### Top Zone
+
+| Channel          | Type                  | Read/Write | Description                  |
+|------------------|-----------------------|------------|------------------------------|
+| temperature      | Number:Temperature    | R          | Current Zone Temperature     |
+| set-temperature  | Number:Temperature    | R          | Wanted Zone Temperature      |
+| light-control    | Switch                | RW         | Control lights for this zone |
+| power            | Switch                | R          | Zone Power                   |
+
+### Bottom Zone
+
+| Channel          | Type                  | Read/Write | Description                  |
+|------------------|-----------------------|------------|------------------------------|
+| temperature      | Number:Temperature    | R          | Current Zone Temperature     |
+| set-temperature  | Number:Temperature    | R          | Wanted Zone Temperature      |
+| light-control    | Switch                | RW         | Control lights for this zone |
+| power            | Switch                | R          | Zone Power                   |
 
 ## Full Example
 
@@ -46,6 +65,7 @@ _*.sitemap examples are optional._
 ```java
 Example thing configuration goes here.
 ```
+
 ### Item Configuration
 
 ```java
