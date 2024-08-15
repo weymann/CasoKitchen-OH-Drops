@@ -1,10 +1,10 @@
 # CasoKitchen Binding
 
-Gives you control on Caso WineCooler.
+Gives you control on Caso kitchen devices.
 
 ## Supported Things
 
-- `winecooler`: Wine cooler
+- `winecooler-2z`: Winecooler with 2 cooling zones
 
 ## Discovery
 
@@ -13,12 +13,12 @@ There's no automatic discovery.
 ## Thing Configuration
 
 You need a [Caso Account](https://www.casoapp.com/Account/Create) to get configuration parameters.
-After register you'll get the
-
+Follow [Cinstructions](https://publickitchenapi.casoapp.com/) to obtain
+  
 - API key
 - Device ID 
 
-### `sample` Thing Configuration
+### `winecooler-2z` Thing Configuration
 
 | Name            | Type    | Description                                          | Default | 
 |-----------------|---------|------------------------------------------------------|---------|
