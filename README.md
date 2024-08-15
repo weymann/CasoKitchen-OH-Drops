@@ -13,7 +13,7 @@ There's no automatic discovery.
 ## Thing Configuration
 
 You need a [Caso Account](https://www.casoapp.com/Account/Create) to get configuration parameters.
-Follow [Cinstructions](https://publickitchenapi.casoapp.com/) to obtain
+Follow [instructions](https://publickitchenapi.casoapp.com/) to obtain
   
 - API key
 - Device ID 
